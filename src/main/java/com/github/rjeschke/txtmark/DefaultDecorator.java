@@ -241,4 +241,88 @@ public class DefaultDecorator implements Decorator
     {
         out.append(" />");
     }
+
+    @Override
+    public void openTable(final StringBuilder out)
+    {
+        out.append("<table>");
+    }
+
+    @Override
+    public void closeTable(final StringBuilder out)
+    {
+        out.append("</table>");
+    }
+
+    @Override
+    public void openTableCaption(final StringBuilder out)
+    {
+        out.append("<caption>");
+    }
+
+    @Override
+    public void closeTableCaption(final StringBuilder out)
+    {
+        out.append("</caption>");
+    }
+
+    @Override
+    public void openTableHead(final StringBuilder out)
+    {
+        out.append("<thead>");
+    }
+
+    @Override
+    public void closeTableHead(final StringBuilder out)
+    {
+        out.append("</thead>");
+    }
+
+    @Override
+    public void openTableBody(final StringBuilder out)
+    {
+        out.append("<tbody>");
+    }
+
+    @Override
+    public void closeTableBody(final StringBuilder out)
+    {
+        out.append("</tbody>");
+    }
+
+    @Override
+    public void openTableRow(final StringBuilder out)
+    {
+        out.append("<tr>");
+    }
+
+    @Override
+    public void closeTableRow(final StringBuilder out)
+    {
+        out.append("</tr>");
+    }
+
+    @Override
+    public void openTableHeader(final StringBuilder out)
+    {
+        out.append("<th>");
+    }
+
+    @Override
+    public void closeTableHeader(final StringBuilder out)
+    {
+        out.append("</th>");
+    }
+
+    @Override
+    public void openTableData(final StringBuilder out)
+    {
+        out.append("<td>");
+    }
+
+    @Override
+    public void closeTableData(final StringBuilder out)
+    {
+        out.append("</td>");
+    }
 }

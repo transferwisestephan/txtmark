@@ -111,6 +111,8 @@ class Emitter
             }
             out.append('>');
             break;
+        case TABLE:
+            this.config.decorator.openTable(out);
         }
 
         if (root.hasLines())
@@ -158,6 +160,8 @@ class Emitter
         case LIST_ITEM:
             this.config.decorator.closeListItem(out);
             break;
+        case TABLE:
+            this.config.decorator.closeTable(out);
         }
     }
 
@@ -182,6 +186,8 @@ class Emitter
         case XML:
             this.emitRawLines(out, block.lines);
             break;
+        case TABLE:
+            this.emitTableLines(out, block.lines);
         default:
             this.emitMarkedLines(out, block.lines);
             break;
@@ -1044,5 +1050,39 @@ class Emitter
                 line = line.next;
             }
         }
+    }
+
+    /**
+     * Writes a table into the StringBuilder
+     *
+     * @param out
+     *              The StringBuilder to write to.
+     * @param lines
+     *              The lines to write.
+     */
+    private void emitTableLines(final StringBuilder out, final Line lines) {
+        Line line = lines;
+        if (line.isEmpty) {
+            return;
+        }
+        Table table = (Table)line.data;
+        Decorator decorator = this.config.decorator;
+
+        // emit table header row
+        decorator.openTableHead(out);
+        decorator.openTableRow(out);
+        int i = 0;
+        for (String cellText : table.header) {
+            decorator.openTableHeader(out);
+            recursiveEmitLine(out, cellText, 0, MarkToken.NONE);
+            decorator.closeTableHeader(out);
+        }
+        decorator.closeTableRow(out);
+        decorator.closeTableHead(out);
+
+        // emit table body
+        decorator.openTableBody(out);
+        // TODO: Handle table body rows and cells
+        decorator.closeTableBody(out);
     }
 }

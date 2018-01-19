@@ -42,6 +42,8 @@ class Line
     public boolean prevEmpty, nextEmpty;
     /** Final line of a XML block. */
     public Line    xmlEndLine;
+    /** Additional data associated with the line */
+    public Object data = null;
 
     /** Constructor. */
     public Line()
@@ -289,6 +291,15 @@ class Line
         if (this.value.charAt(this.leading) == '#')
         {
             return LineType.HEADLINE;
+        }
+
+        if (this.value.charAt(this.leading) == '|' && (this.previous == null || this.previous.isEmpty))
+        {
+            Table table = Table.parse(this.value, this.next.value);
+            if (table != null) {
+                this.data = table;
+                return LineType.TABLE;
+            }
         }
 
         if (this.value.charAt(this.leading) == '>')

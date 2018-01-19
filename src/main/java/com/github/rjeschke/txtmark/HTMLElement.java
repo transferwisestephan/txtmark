@@ -22,7 +22,6 @@ package com.github.rjeschke.txtmark;
  */
 enum HTMLElement
 {
-    // TODO add new HTML5 elements
     NONE,
     a, abbr, acronym, address, applet, area,
     b, base, basefont, bdo, big, blockquote, body, br, button,
@@ -42,5 +41,22 @@ enum HTMLElement
     s, samp, script, select, small, span, strike, strong, style, sub, sup,
     table, tbody, td, textarea, tfoot, th, thead, title, tr, tt,
     u, ul,
-    var
+    var,
+
+    // new HTML5 elements
+    article, aside, audio,
+    bb,
+    canvas,
+    data, datalist, details, dialog,
+    embed,
+    figure, footer,
+    header, hgroup,
+    mark, meter,
+    nav,
+    output,
+    progress,
+    ruby, rp, rt,
+    section,
+    time,
+    video
 }

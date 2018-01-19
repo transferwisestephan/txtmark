@@ -470,4 +470,33 @@ public interface Decorator
      *            The StringBuilder to write to.
      */
     public void closeImage(final StringBuilder out);
+
+    public void openTable(final StringBuilder out);
+
+    public void closeTable(final StringBuilder out);
+
+    public void openTableCaption(final StringBuilder out);
+
+    public void closeTableCaption(final StringBuilder out);
+
+    public void openTableHead(final StringBuilder out);
+
+    public void closeTableHead(final StringBuilder out);
+
+    public void openTableBody(final StringBuilder out);
+
+    public void closeTableBody(final StringBuilder out);
+
+    public void openTableRow(final StringBuilder out);
+
+    public void closeTableRow(final StringBuilder out);
+
+    public void openTableHeader(final StringBuilder out);
+
+    public void closeTableHeader(final StringBuilder out);
+
+    public void openTableData(final StringBuilder out);
+
+    public void closeTableData(final StringBuilder out);
+
 }

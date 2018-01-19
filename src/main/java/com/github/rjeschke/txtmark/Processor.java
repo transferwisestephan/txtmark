@@ -981,6 +981,25 @@ public class Processor
                 }
                 list.expandListParagraphs();
                 break;
+            case TABLE:
+                Table table = (Table)line.data;
+                // skip the table divider line
+                line = line.next.next;
+                while (line != null)
+                {
+                    if (line.isEmpty)
+                    {
+                        break;
+                    }
+                    if (!table.addRow(line.value)) {
+                        break;
+                    }
+                    line = line.next;
+                }
+                block = root.split(line != null ? line.previous : root.lineTail);
+                block.type = BlockType.TABLE;
+                line = root.lines;
+                break;
             default:
                 line = line.next;
                 break;

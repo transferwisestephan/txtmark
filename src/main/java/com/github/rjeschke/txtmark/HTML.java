@@ -103,15 +103,22 @@ class HTML
 
     /** HTML block level elements. */
     private final static HTMLElement[] BLOCK_ELEMENTS = {
-        HTMLElement.address,
+        HTMLElement.address, HTMLElement.article, HTMLElement.aside, HTMLElement.audio,
         HTMLElement.blockquote,
-        HTMLElement.del, HTMLElement.div, HTMLElement.dl,
+        HTMLElement.canvas,
+        HTMLElement.data, HTMLElement.datalist, HTMLElement.details, HTMLElement.del,
+        HTMLElement.dialog, HTMLElement.div, HTMLElement.dl,
+        HTMLElement.embed,
+        HTMLElement.figure, HTMLElement.footer,
         HTMLElement.fieldset, HTMLElement.form,
-        HTMLElement.h1, HTMLElement.h2, HTMLElement.h3, HTMLElement.h4, HTMLElement.h5, HTMLElement.h6, HTMLElement.hr,
+        HTMLElement.h1, HTMLElement.h2, HTMLElement.h3, HTMLElement.h4, HTMLElement.h5, HTMLElement.h6,
+        HTMLElement.hr, HTMLElement.header, HTMLElement.hgroup,
         HTMLElement.ins,
-        HTMLElement.noscript,
-        HTMLElement.ol,
-        HTMLElement.p, HTMLElement.pre,
+        HTMLElement.mark, HTMLElement.meter,
+        HTMLElement.nav, HTMLElement.noscript,
+        HTMLElement.ol, HTMLElement.output,
+        HTMLElement.p, HTMLElement.pre, HTMLElement.progress,
+        HTMLElement.section,
         HTMLElement.table,
         HTMLElement.ul
     };

@@ -54,6 +54,26 @@ class Utils
         return pos < in.length() ? pos : -1;
     }
 
+    public final static int skipSpacesBackwards(final String in, final int start, final int end) {
+
+        int pos = end - 1;
+        while (pos >= start && in.charAt(pos) == ' ')
+        {
+            pos--;
+        }
+        return pos < start ? -1 : pos;
+    }
+
+    public final static int skipChars(final String in, final int start, final char ch)
+    {
+        int pos = start;
+        while (pos < in.length() && in.charAt(pos) == ch)
+        {
+            pos++;
+        }
+        return pos < in.length() ? pos : -1;
+    }
+
     /**
      * Processed the given escape sequence.
      *
